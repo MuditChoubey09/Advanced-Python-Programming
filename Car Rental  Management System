@@ -1,0 +1,56 @@
+# Simple Car Rental System (Classes + Inheritance)
+
+# Parent class
+class Car:
+    def __init__(self, brand, model, rate_per_day):
+        self.brand = brand
+        self.model = model
+        self.rate_per_day = rate_per_day
+
+    def show_details(self):
+        print("Brand:", self.brand)
+        print("Model:", self.model)
+        print("Rate per day:", self.rate_per_day)
+
+    def calculate_rent(self, days):
+        return self.rate_per_day * days
+
+
+# Child classes
+class Luxury(Car):
+    def show_details(self):
+        print("Category: Luxury")
+        super().show_details()
+
+
+class Sedan(Car):
+    def show_details(self):
+        print("Category: Sedan")
+        super().show_details()
+
+
+class Hatchback(Car):
+    def show_details(self):
+        print("Category: Hatchback")
+        super().show_details()
+
+
+# Creating objects
+car1 = Luxury("Mercedes", "E-Class", 9000)
+car2 = Sedan("Honda", "City", 2500)
+car3 = Hatchback("Maruti", "Swift", 1200)
+
+# Showing details
+car1.show_details()
+print()
+car2.show_details()
+print()
+car3.show_details()
+
+# Calculating rent for 3 days
+days = 3
+print()
+print("Rent for", days, "days:")
+print(car1.brand, car1.model, "=", car1.calculate_rent(days))
+print(car2.brand, car2.model, "=", car2.calculate_rent(days))
+print(car3.brand, car3.model, "=", car3.calculate_rent(days))
