@@ -1,0 +1,15 @@
+# Basic: get day, month and year from a date using regex
+
+import re
+
+date = input("Enter date (DD/MM/YYYY): ")
+
+# \d means one digit, so \d\d means two digits
+match = re.match(r"(\d\d)/(\d\d)/(\d\d\d\d)", date)
+
+if match:
+    print("Day   :", match.group(1))
+    print("Month :", match.group(2))
+    print("Year  :", match.group(3))
+else:
+    print("Wrong format. Enter like 25/11/2026")
